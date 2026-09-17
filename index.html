@@ -593,4 +593,12 @@
   </div>
 </div>
 
+<script>
+  document.getElementById('gripForm').addEventListener('submit', (e) => {
+    const submitBtn = document.querySelector('.btn-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = '⏳ Verzenden...';
+  });
+</script>
+
 </body></html>
