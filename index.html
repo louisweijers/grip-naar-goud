@@ -1,0 +1,596 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Van Grip naar Goud – Formulier</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+    min-height: 100vh;
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+
+  .header {
+    background: #172a67;
+    color: white;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .header p {
+    font-size: 16px;
+    opacity: 0.9;
+  }
+
+  .content {
+    padding: 40px;
+  }
+
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #172a67;
+  }
+
+  .section h3 {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 500;
+  }
+
+  select, input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+  }
+
+  select:focus, input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #172a67;
+    box-shadow: 0 0 0 3px rgba(23, 42, 103, 0.1);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .checkbox-group, .radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+
+  .checkbox-item, .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkbox-item label, .radio-item label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: normal;
+  }
+
+  .tasks-grid {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .task-row {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px 100px 100px;
+    gap: 10px;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+  }
+
+  .task-row input[type="text"] {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .task-row input[type="radio"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .note {
+    background: #fffbea;
+    border-left: 4px solid #f39c12;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #7f5a00;
+    margin-bottom: 20px;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #ecf0f1;
+  }
+
+  button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .btn-submit {
+    background: #172a67;
+    color: white;
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(23, 42, 103, 0.3);
+  }
+
+  .btn-reset {
+    background: #ecf0f1;
+    color: #2c3e50;
+  }
+
+  .btn-reset:hover {
+    background: #bdc3c7;
+  }
+
+  .success-message {
+    display: none;
+    background: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+
+  .required {
+    color: #e74c3c;
+  }
+</style>
+
+<div class="container">
+  <div class="header">
+    <svg width="160" height="50" viewBox="0 0 160 50" style="margin-bottom: 15px;" xmlns="http://www.w3.org/2000/svg">
+      <rect width="160" height="50" fill="white" rx="3"/>
+      <circle cx="25" cy="25" r="15" fill="#172a67"/>
+      <text x="25" y="32" font-size="24" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif">A</text>
+      <text x="85" y="22" font-size="12" font-weight="600" fill="#172a67" font-family="Arial, sans-serif">AQUA</text>
+      <text x="85" y="35" font-size="12" font-weight="600" fill="#172a67" font-family="Arial, sans-serif">SERVICE</text>
+    </svg>
+    <h1>Van Grip naar Goud</h1>
+  </div>
+
+  <div class="content">
+    <div class="success-message" id="successMsg">
+      ✓ Bedankt! Je antwoorden zijn opgeslagen.
+    </div>
+
+    <form id="gripForm" method="POST" action="https://script.google.com/macros/s/AKfycbzbvR7rq3t6wfJghWOXGiRzh7zwYpeaMlVdG6xrHo99K3FDk3JXB-Zvcz8K70lpSfKT/exec">
+      <!-- PERSOONLIJKE GEGEVENS -->
+      <div class="section">
+        <h2>Persoonlijke gegevens</h2>
+
+        <div class="form-group">
+          <label for="naam">Jouw naam <span class="required">*</span></label>
+          <select id="naam" name="naam" placeholder="-- Kies je naam --" required>
+            <option value="" disabled selected>-- Kies je naam --</option>
+            <option value="Neddy">Neddy (Magazijn)</option>
+            <option value="Jennifer">Jennifer (Magazijn)</option>
+            <option value="Willemijn">Willemijn (Magazijn)</option>
+            <option value="Jeroen">Jeroen (Inkoop)</option>
+            <option value="Lars">Lars (Klantenservice)</option>
+            <option value="Gijs">Gijs (B2B)</option>
+            <option value="Brigit">Brigit (Klantenservice)</option>
+            <option value="Inge">Inge (Winkel)</option>
+            <option value="Joran">Joran (Winkel)</option>
+            <option value="Louis">Louis (Marketing/Ecommerce)</option>
+            <option value="Willem">Willem (Algemeen)</option>
+            <option value="Willem Jan">Willem Jan (Werkplaats)</option>
+            <option value="Jacqueline">Jacqueline (HR/Office)</option>
+            <option value="René">René (Finance)</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- MIJN FUNCTIE -->
+      <div class="section">
+        <h2>Mijn functie</h2>
+
+        <div class="form-group">
+          <label for="functie">Waarom bestaat jouw functie? Wat voeg je toe aan dit bedrijf? <span class="required">*</span></label>
+          <textarea id="functie" name="functie" placeholder="Schrijf hier in je eigen woorden..." required></textarea>
+        </div>
+      </div>
+
+      <!-- MIJN VERANTWOORDELIJKHEDEN -->
+      <div class="section">
+        <h2>Mijn verantwoordelijkheden</h2>
+
+        <p style="margin-bottom: 20px; color: #7f8c8d;">Welke processen/verantwoordelijkheidsvelden voel je jezelf? (5 velden)</p>
+
+        <div style="display: grid; gap: 20px; margin-bottom: 20px;">
+          <!-- Verantwoordelijkheid 1 -->
+          <div style="padding: 15px; background: #f8f9fa; border-radius: 6px;">
+            <input type="text" placeholder="Verantwoordelijkheid 1" name="taak1" style="width: 100%; padding: 8px; margin-bottom: 12px; font-weight: 600; border: 2px solid #172a67; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Prioriteit</label>
+                <select name="prioriteit1" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Iedere dag nodig">Iedere dag nodig</option>
+                  <option value="Regelmatig nodig">Regelmatig nodig</option>
+                  <option value="Soms nodig">Soms nodig</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Wanneer</label>
+                <select name="seizoen1" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Hele jaar">Hele jaar (jan-dec)</option>
+                  <option value="Laagseizoen (sept-jan)">Laagseizoen (sept-jan)</option>
+                  <option value="Voorseizoen (feb-april)">Voorseizoen (feb-april)</option>
+                  <option value="Hoogseizoen (mei-aug)">Hoogseizoen (mei-aug)</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Aan wie draag je over</label>
+                <select name="capaciteit1" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Mezelf">Mezelf</option>
+                  <option value="Neddy">Neddy</option>
+                  <option value="Jennifer">Jennifer</option>
+                  <option value="Willemijn">Willemijn</option>
+                  <option value="Jeroen">Jeroen</option>
+                  <option value="Lars">Lars</option>
+                  <option value="Gijs">Gijs</option>
+                  <option value="Brigit">Brigit</option>
+                  <option value="Inge">Inge</option>
+                  <option value="Joran">Joran</option>
+                  <option value="Louis">Louis</option>
+                  <option value="Willem">Willem</option>
+                  <option value="Willem Jan">Willem Jan</option>
+                  <option value="Jacqueline">Jacqueline</option>
+                  <option value="René">René</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verantwoordelijkheid 2 -->
+          <div style="padding: 15px; background: #f8f9fa; border-radius: 6px;">
+            <input type="text" placeholder="Verantwoordelijkheid 2" name="taak2" style="width: 100%; padding: 8px; margin-bottom: 12px; font-weight: 600; border: 2px solid #172a67; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Prioriteit</label>
+                <select name="prioriteit2" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Iedere dag nodig">Iedere dag nodig</option>
+                  <option value="Regelmatig nodig">Regelmatig nodig</option>
+                  <option value="Soms nodig">Soms nodig</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Wanneer</label>
+                <select name="seizoen2" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Hele jaar">Hele jaar (jan-dec)</option>
+                  <option value="Laagseizoen (sept-jan)">Laagseizoen (sept-jan)</option>
+                  <option value="Voorseizoen (feb-april)">Voorseizoen (feb-april)</option>
+                  <option value="Hoogseizoen (mei-aug)">Hoogseizoen (mei-aug)</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Aan wie draag je over</label>
+                <select name="capaciteit2" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Mezelf">Mezelf</option>
+                  <option value="Neddy">Neddy</option>
+                  <option value="Jennifer">Jennifer</option>
+                  <option value="Willemijn">Willemijn</option>
+                  <option value="Jeroen">Jeroen</option>
+                  <option value="Lars">Lars</option>
+                  <option value="Gijs">Gijs</option>
+                  <option value="Brigit">Brigit</option>
+                  <option value="Inge">Inge</option>
+                  <option value="Joran">Joran</option>
+                  <option value="Louis">Louis</option>
+                  <option value="Willem">Willem</option>
+                  <option value="Willem Jan">Willem Jan</option>
+                  <option value="Jacqueline">Jacqueline</option>
+                  <option value="René">René</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verantwoordelijkheid 3 -->
+          <div style="padding: 15px; background: #f8f9fa; border-radius: 6px;">
+            <input type="text" placeholder="Verantwoordelijkheid 3" name="taak3" style="width: 100%; padding: 8px; margin-bottom: 12px; font-weight: 600; border: 2px solid #172a67; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Prioriteit</label>
+                <select name="prioriteit3" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Iedere dag nodig">Iedere dag nodig</option>
+                  <option value="Regelmatig nodig">Regelmatig nodig</option>
+                  <option value="Soms nodig">Soms nodig</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Wanneer</label>
+                <select name="seizoen3" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Hele jaar">Hele jaar (jan-dec)</option>
+                  <option value="Laagseizoen (sept-jan)">Laagseizoen (sept-jan)</option>
+                  <option value="Voorseizoen (feb-april)">Voorseizoen (feb-april)</option>
+                  <option value="Hoogseizoen (mei-aug)">Hoogseizoen (mei-aug)</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Aan wie draag je over</label>
+                <select name="capaciteit3" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Mezelf">Mezelf</option>
+                  <option value="Neddy">Neddy</option>
+                  <option value="Jennifer">Jennifer</option>
+                  <option value="Willemijn">Willemijn</option>
+                  <option value="Jeroen">Jeroen</option>
+                  <option value="Lars">Lars</option>
+                  <option value="Gijs">Gijs</option>
+                  <option value="Brigit">Brigit</option>
+                  <option value="Inge">Inge</option>
+                  <option value="Joran">Joran</option>
+                  <option value="Louis">Louis</option>
+                  <option value="Willem">Willem</option>
+                  <option value="Willem Jan">Willem Jan</option>
+                  <option value="Jacqueline">Jacqueline</option>
+                  <option value="René">René</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verantwoordelijkheid 4 -->
+          <div style="padding: 15px; background: #f8f9fa; border-radius: 6px;">
+            <input type="text" placeholder="Verantwoordelijkheid 4" name="taak4" style="width: 100%; padding: 8px; margin-bottom: 12px; font-weight: 600; border: 2px solid #172a67; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Prioriteit</label>
+                <select name="prioriteit4" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Iedere dag nodig">Iedere dag nodig</option>
+                  <option value="Regelmatig nodig">Regelmatig nodig</option>
+                  <option value="Soms nodig">Soms nodig</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Wanneer</label>
+                <select name="seizoen4" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Hele jaar">Hele jaar (jan-dec)</option>
+                  <option value="Laagseizoen (sept-jan)">Laagseizoen (sept-jan)</option>
+                  <option value="Voorseizoen (feb-april)">Voorseizoen (feb-april)</option>
+                  <option value="Hoogseizoen (mei-aug)">Hoogseizoen (mei-aug)</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Aan wie draag je over</label>
+                <select name="capaciteit4" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Mezelf">Mezelf</option>
+                  <option value="Neddy">Neddy</option>
+                  <option value="Jennifer">Jennifer</option>
+                  <option value="Willemijn">Willemijn</option>
+                  <option value="Jeroen">Jeroen</option>
+                  <option value="Lars">Lars</option>
+                  <option value="Gijs">Gijs</option>
+                  <option value="Brigit">Brigit</option>
+                  <option value="Inge">Inge</option>
+                  <option value="Joran">Joran</option>
+                  <option value="Louis">Louis</option>
+                  <option value="Willem">Willem</option>
+                  <option value="Willem Jan">Willem Jan</option>
+                  <option value="Jacqueline">Jacqueline</option>
+                  <option value="René">René</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verantwoordelijkheid 5 -->
+          <div style="padding: 15px; background: #f8f9fa; border-radius: 6px;">
+            <input type="text" placeholder="Verantwoordelijkheid 5" name="taak5" style="width: 100%; padding: 8px; margin-bottom: 12px; font-weight: 600; border: 2px solid #172a67; border-radius: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Prioriteit</label>
+                <select name="prioriteit5" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Iedere dag nodig">Iedere dag nodig</option>
+                  <option value="Regelmatig nodig">Regelmatig nodig</option>
+                  <option value="Soms nodig">Soms nodig</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Wanneer</label>
+                <select name="seizoen5" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Hele jaar">Hele jaar (jan-dec)</option>
+                  <option value="Laagseizoen (sept-jan)">Laagseizoen (sept-jan)</option>
+                  <option value="Voorseizoen (feb-april)">Voorseizoen (feb-april)</option>
+                  <option value="Hoogseizoen (mei-aug)">Hoogseizoen (mei-aug)</option>
+                </select>
+              </div>
+              <div>
+                <label style="display: block; font-weight: 600; font-size: 12px; color: #172a67; margin-bottom: 5px;">Aan wie draag je over</label>
+                <select name="capaciteit5" style="width: 100%; padding: 6px; font-size: 12px; border: 2px solid #ecf0f1; border-radius: 4px;">
+                  <option value="">-</option>
+                  <option value="Mezelf">Mezelf</option>
+                  <option value="Neddy">Neddy</option>
+                  <option value="Jennifer">Jennifer</option>
+                  <option value="Willemijn">Willemijn</option>
+                  <option value="Jeroen">Jeroen</option>
+                  <option value="Lars">Lars</option>
+                  <option value="Gijs">Gijs</option>
+                  <option value="Brigit">Brigit</option>
+                  <option value="Inge">Inge</option>
+                  <option value="Joran">Joran</option>
+                  <option value="Louis">Louis</option>
+                  <option value="Willem">Willem</option>
+                  <option value="Willem Jan">Willem Jan</option>
+                  <option value="Jacqueline">Jacqueline</option>
+                  <option value="René">René</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Toelichting:</strong><br>
+          • <strong>Iedere dag nodig</strong> = dagelijkse operatie kan niet zonder<br>
+          • <strong>Regelmatig nodig</strong> = meerdere keren per week/maand, kan niet worden gemist<br>
+          • <strong>Soms nodig</strong> = incidenteel, kan wachten
+        </div>
+      </div>
+
+<!-- AMBITIES & EIGENAARSCHAP -->
+      <!-- ONDUIDELIJKE VERANTWOORDELIJKHEDEN -->
+      <div class="section">
+        <h2>Onduidelijke verantwoordelijkheden</h2>
+
+        <div class="form-group">
+          <label for="onduidelijk">Zijn er werkzaamheden of afdelingen waarbij het voor jou niet duidelijk is wie waarvoor verantwoordelijk is?</label>
+          <textarea id="onduidelijk" name="onduidelijk" placeholder="Waar is de verantwoordelijkheid onduidelijk?" style="min-height: 80px;"></textarea>
+        </div>
+      </div>
+
+      <!-- SAMENWERKING -->
+      <div class="section">
+        <h2>Samenwerking</h2>
+
+        <div class="form-group">
+          <label for="samenwerk_magazijn">Magazijn</label>
+          <textarea id="samenwerk_magazijn" name="samenwerk_magazijn" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_inkoop">Inkoop</label>
+          <textarea id="samenwerk_inkoop" name="samenwerk_inkoop" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_klantenservice">Klantenservice</label>
+          <textarea id="samenwerk_klantenservice" name="samenwerk_klantenservice" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_b2b">B2B</label>
+          <textarea id="samenwerk_b2b" name="samenwerk_b2b" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_winkel">Winkel</label>
+          <textarea id="samenwerk_winkel" name="samenwerk_winkel" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_marketing">Marketing/Ecommerce</label>
+          <textarea id="samenwerk_marketing" name="samenwerk_marketing" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_werkplaats">Werkplaats</label>
+          <textarea id="samenwerk_werkplaats" name="samenwerk_werkplaats" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_hr">HR/Office</label>
+          <textarea id="samenwerk_hr" name="samenwerk_hr" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="samenwerk_finance">Finance</label>
+          <textarea id="samenwerk_finance" name="samenwerk_finance" placeholder="Wat zou beter kunnen in de samenwerking?" style="min-height: 60px;"></textarea>
+        </div>
+      </div>
+
+      <!-- AMBITIES -->
+      <div class="section">
+        <h2>Ambities & kennis</h2>
+
+        <div class="form-group">
+          <label for="ambities">Welke ambities heb je?</label>
+          <textarea id="ambities" name="ambities" placeholder="Jouw ambities..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="talent">Welke kennis, ervaring of talent gebruiken we van jou nog niet voldoende?</label>
+          <textarea id="talent" name="talent" placeholder="Wat kun je waar we niet altijd gebruik van maken?"></textarea>
+        </div>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="button-group">
+        <button type="submit" class="btn-submit">✓ Opslaan</button>
+        <button type="reset" class="btn-reset">↺ Wissen</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body></html>
